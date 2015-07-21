@@ -96,7 +96,7 @@ public class OSCButtonSettingsWrapper extends OSCControlSettingsWrapper {
         }
 
         if(vgOSCPressed.valueChanged()) {
-            thisControl.getParameters().setOSCButtonPressed(vgOSCPressed.getValue());
+            thisControl.updateOSCPressed(vgOSCPressed.getValue());
         }
 
         if(vgDefaultFillColor.valueChanged()) {

@@ -119,11 +119,11 @@ public class OSCToggleSettingsWrapper extends OSCControlSettingsWrapper {
         }
 
         if(vgOSCToggleOn.valueChanged()) {
-            thisControl.getParameters().setOSCToggleOn(vgOSCToggleOn.getValue());
+            thisControl.updateOSCToggleOn(vgOSCToggleOn.getValue());
         }
 
         if(vgOSCToggleOff.valueChanged()) {
-            thisControl.getParameters().setOSCToggleOff(vgOSCToggleOff.getValue());
+            thisControl.updateOSCToggleOff(vgOSCToggleOff.getValue());
         }
 
         if(vgTriggerOnToggleOff.valueChanged()) {
