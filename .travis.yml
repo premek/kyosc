@@ -18,3 +18,14 @@ android:
 #    - extra-google-m2repository
 #    - extra-android-m2repository
 #    - addon-google_apis-google-26
+
+
+deploy:
+  provider: releases
+  api_key:
+    secure: "NzNIGtRIu7JXFWhVBVrX1VAtxlGDyz/5pkKf0Dxu3yUFCRwEeNuhQcfVAhdkrgpAfR1mAn93v3H2AueGDm+mqUgP5fy9pOGAnalQY6CuXsDZWt6YuHrsX4Ouj1asDxuZjnP9pBoA2LShcLperpXwhZ/U4tHe6mQtH2CDWkT2vBwfP7GH2XyQ4pCnZZwaUj0nqwLOj87YsuDOocB1TIMCYv4X9GxNjZR3lEJlGNAML8uLooDbbpd1FFV5l7PAtwXbLsCM3SgS09gbb4BnQf79wiwrXzy8WmUJalQ9jNKxwGyRGtPUD4UyYIYc9k1MOb7O2a+fJKE+dZJkZKJUe3k5UP+yEADa6rEVSLEgWx+G+Scg3wtIuFaJ+GXSc+Y3g/yNV7WOnU81MTQVyBH+EUqAUXp9mm/hGti+kaZ6KjUJ6SRe/gXM56H8mG4EbC0G95PLHqfzy/pzsL4QPlaCZ4aP8N/7znVCp4aKPE9MDV+aS8zNgsy8CuzELTSn5YXNY/rLgIMKvkTqdoDw7i6Fzha1MiaXffbGnlKWz3hMmt798Daubu/OTLG2LB3MESvMqtw/I+qQkM8HJ0whtmormwvFKt9BShvqgYouKccRH1KCMv4FVHEcwv2j1QItlewfMUPoFcwRiwFjujXND9N5gHN4u/nKvHWcU5Vt1Yn9Ai7h2o8="
+  file: "app/build/outputs/apk/*/*.apk"
+  file_glob: "true"
+  skip_cleanup: true
+  on:
+    tags: true
