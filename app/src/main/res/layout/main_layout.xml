@@ -4,20 +4,14 @@
     android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-
-    <!-- <fragment
-        android:id="@+id/frgMenu"
-        android:name="com.ahmetkizilay.controls.androsc.fragments.MenuFragment"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent" /> -->
     
     <fragment
         android:id="@+id/frgOSCView"
-        android:name="com.ahmetkizilay.controls.androsc.fragments.OSCViewFragment"
+        android:name="com.github.premek.kyosc.fragments.OSCViewFragment"
         android:layout_width="fill_parent"
         android:layout_height="match_parent" />
 
-    <com.ahmetkizilay.controls.androsc.utils.NavigationDrawerView
+    <com.github.premek.kyosc.utils.NavigationDrawerView
         android:id="@+id/left_drawer"
         android:layout_width="160dp"
         android:layout_height="match_parent"

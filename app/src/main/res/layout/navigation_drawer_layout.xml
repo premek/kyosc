@@ -8,10 +8,9 @@
         android:id="@+id/txtMenuTitle"
         style="@style/MenuCategoryTheme"
         android:text="@string/mnu_title" android:layout_alignParentTop="true"
-        android:textSize="24dp"
+        android:textSize="25dp"
         android:gravity="center_vertical"
-        android:paddingLeft="32dp"
-        android:textStyle="bold"
+        android:paddingLeft="18dp"
         android:textColor="@color/button_text"/>
 
     <ScrollView
@@ -55,5 +54,5 @@
     <TextView
         android:id="@+id/txtMenuAbout"
         style="@style/MenuItemTheme"
-        android:text="ABOUT" android:layout_alignParentBottom="true"/>
+        android:text="@string/mnu_about" android:layout_alignParentBottom="true"/>
 </RelativeLayout>

@@ -1,6 +1,10 @@
-###AndrOSC
+### KyOSC
 
-An app for Android to use OSC from your device with the ability to design graphical templates within the app. The app is available to download on Google Play Store on a donation based system.
+Based on Ahmet Kizilay's [AndrOSC](https://github.com/ahmetkizilay/AndrOSC)
+
+An app for Android to use OSC from your device 
+with the ability to design graphical templates 
+within the app. 
 
 #### Available Controllers
 * OSC_Button 

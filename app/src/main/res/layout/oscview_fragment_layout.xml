@@ -8,7 +8,7 @@
     >
     <!-- android:background="@drawable/osc_edit_bg" -->
 
-    <com.ahmetkizilay.controls.androsc.views.OSCViewGroup
+    <com.github.premek.kyosc.views.OSCViewGroup
         android:id="@+id/wgOSCPanel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
@@ -76,13 +76,13 @@
         android:contentDescription="@string/osc_toggle_menu"
         android:src="@drawable/actionunlock" />
 
-    <com.ahmetkizilay.controls.androsc.views.settings.OSCSettingsViewGroup
+    <com.github.premek.kyosc.views.settings.OSCSettingsViewGroup
         android:layout_width="400dp"
         android:layout_height="fill_parent"
         android:layout_gravity="top|right"
         android:id="@+id/vgSettings" android:visibility="invisible"/>
 
-    <com.ahmetkizilay.controls.androsc.views.HSLColorPicker
+    <com.github.premek.kyosc.views.HSLColorPicker
         android:id="@+id/layColorPicker"
         android:layout_width="320dp"
         android:layout_height="wrap_content"
