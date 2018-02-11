@@ -18,8 +18,6 @@ import com.ahmetkizilay.controls.androsc.fragments.OSCViewFragment;
 import com.ahmetkizilay.controls.androsc.osc.OSCWrapper;
 import com.ahmetkizilay.controls.androsc.utils.NavigationDrawerView;
 import com.ahmetkizilay.controls.androsc.utils.Utilities;
-import com.ahmetkizilay.modules.donations.PaymentDialogFragment;
-import com.ahmetkizilay.modules.donations.ThankYouDialogFragment;
 
 import android.content.Context;
 import android.content.Intent;
@@ -231,7 +229,6 @@ public class AndrOSCMainActivity extends FragmentActivity implements
             frgAboutMeDialog.setRequestListener(new AboutMeDialogFragment.RequestListener() {
                 public void onDonationsRequested() {
                     frgAboutMeDialog.dismiss();
-                    showDonationDialog();
                 }
             });
             frgAboutMeDialog.show(ft, AndrOSCMainActivity.TAG_DIALOG_ABOUT_ME);
@@ -239,36 +236,6 @@ public class AndrOSCMainActivity extends FragmentActivity implements
 
         this.mDrawerLayout.closeDrawer(Gravity.START);
 	}
-
-    private void showDonationDialog() {
-        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-        Fragment prev = getSupportFragmentManager().findFragmentByTag(AndrOSCMainActivity.TAG_DIALOG_ABOUT_ME);
-        if(prev != null) {
-            ft.remove(prev);
-        }
-        ft.addToBackStack(null);
-
-        final PaymentDialogFragment frgDonationsDialog = PaymentDialogFragment.getInstance(R.array.product_ids);
-        frgDonationsDialog.setPaymentCompletedListener(new PaymentDialogFragment.PaymentCompletedListener() {
-            public void onPaymentCompleted() {
-                frgDonationsDialog.dismiss();
-                showThankYouDialog();
-            }
-        });
-        frgDonationsDialog.show(ft, AndrOSCMainActivity.TAG_DIALOG_DONATIONS);
-    }
-
-    private void showThankYouDialog() {
-        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-        Fragment prev = getSupportFragmentManager().findFragmentByTag(AndrOSCMainActivity.TAG_DIALOG_ABOUT_ME);
-        if(prev != null) {
-            ft.remove(prev);
-        }
-        ft.addToBackStack(null);
-
-        final ThankYouDialogFragment frgThankYouDialog = ThankYouDialogFragment.newInstance();
-        frgThankYouDialog.show(ft, AndrOSCMainActivity.TAG_DIALOG_THANKS);
-    }
 
     private void showExitConfirmDialog() {
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
@@ -292,21 +259,6 @@ public class AndrOSCMainActivity extends FragmentActivity implements
             }
         });
         frg.show(ft, AndrOSCMainActivity.TAG_DIALOG_CONFIRM_EXIT);
-    }
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-
-        // pass the request back to the fragment
-        if(requestCode == PaymentDialogFragment.PAYMENT_RESULT_CODE) {
-            FragmentManager fragmentManager = getSupportFragmentManager();
-            Fragment fragment = fragmentManager.findFragmentByTag(AndrOSCMainActivity.TAG_DIALOG_DONATIONS);
-            if (fragment != null)
-            {
-                fragment.onActivityResult(requestCode, resultCode, data);
-            }
-        }
     }
 
     public void oscMenuItemTemplateSelected(String templateName) {

@@ -1,53 +1,48 @@
-import groovy.json.JsonSlurper
+//import groovy.json.JsonSlurper
+//
+//def keyFile = null
+//if(new File("keys.json").exists()) {
+//    keyFile = new File("keys.json")
+//}
+//else {
+//    keyFile = new File("../keys.json");
+//}
+//def keysJSON = new JsonSlurper().parseText(keyFile.text)
 
-def keyFile = null
-if(new File("keys.json").exists()) {
-    keyFile = new File("keys.json")
-}
-else {
-    keyFile = new File("../keys.json");
-}
-def keysJSON = new JsonSlurper().parseText(keyFile.text)
-
-apply plugin: 'android'
+apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 19
-    buildToolsVersion '19.1.0'
+    compileSdkVersion 26
+    buildToolsVersion '26.0.2'
 
     defaultConfig {
-        applicationId "com.ahmetkizilay.controls.androsc"
-        minSdkVersion 10
-        targetSdkVersion 19
+        applicationId "com.github.premek.kyosc"
+        minSdkVersion 16
+        targetSdkVersion 26
         versionCode 7
-        versionName '0.9.4'
+        versionName '1.0.0'
     }
 
-    signingConfigs {
-        release {
-            storeFile file(keysJSON.keyStorePath)
-            storePassword keysJSON.keyStorePass
-            keyAlias keysJSON.keyAlias
-            keyPassword keysJSON.keyPassword
-        }
-    }
+//    signingConfigs {
+//        release {
+//            storeFile file(keysJSON.keyStorePath)
+//            storePassword keysJSON.keyStorePass
+//            keyAlias keysJSON.keyAlias
+//            keyPassword keysJSON.keyPassword
+//        }
+//    }
 
     buildTypes {
         release {
-            runProguard false
-            debuggable false
-            jniDebugBuild false
-            signingConfig signingConfigs.release
+//            runProguard false
+//            debuggable false
+//            jniDebugBuild false
+//            signingConfig signingConfigs.release
         }
     }
 }
 
 dependencies {
-    compile 'com.android.support:support-v4:19.+'
-    compile 'com.illposed.osc:javaosc-ui:0.2@jar'
-    compile(name: 'donations', ext: 'aar')
-}
-
-repositories {
-    flatDir { dirs 'aars' }
+    implementation 'com.android.support:support-v4:26.+'
+    implementation 'com.illposed.osc:javaosc-ui:0.2@jar'
 }
