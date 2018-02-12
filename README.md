@@ -6,6 +6,10 @@ An app for Android to use OSC from your device
 with the ability to design graphical templates 
 within the app. 
 
+This fork fixes the build for current platforms, fixes a bug when multiple buttons sent all the same code, adds button release event, ...
+
+I plan to add more functions and to fix some issues reported to the original project.
+
 #### Available Controllers
 * OSC_Button 
 * OSC_Toggle
@@ -14,10 +18,11 @@ within the app.
 * OSC_HSlider
 
 #### Installation
-TBA
+There are some debug .apk's in the [Releases section](https://github.com/premek/kyosc/releases).
+- download the .apk to your android device
+- enable 'unknown sources' in your settings (the location of the option depends on the brand of your device)
+- use any file browser on your android device to locate the .apk file, click it and install
 
-#### Usage
-TBA
 
 #### License
 
